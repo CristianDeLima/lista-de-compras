@@ -29,15 +29,7 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.logo {
-  margin-top: 1.5625rem;
-  margin-bottom: 3.875rem;
+  background-color: var(--background-primary);
 }
 
 .button {
@@ -89,4 +81,12 @@ input[type="checkbox"] {
     background-image: url(../assets/icons/selected.svg);
     border: none;
   }
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
 }
