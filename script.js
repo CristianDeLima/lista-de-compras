@@ -15,4 +15,3 @@ function addItem() {
   items.append(newItem)
   console.log(newItem)
 }
-˝
