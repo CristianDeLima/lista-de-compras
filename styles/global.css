@@ -72,14 +72,17 @@ input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
   border-radius: 0.375rem;
-
+  
   &:hover {
     border-color: var(--border-hover);
+    border: none;
   }
-
+  
   &:checked {
     background-image: url(../assets/icons/selected.svg);
     border: none;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 }
 
