@@ -5,6 +5,7 @@ const items = document.querySelector(".items")
 
 buttonAdd.addEventListener("click", (event) => {
   addItem()
+  itemName.value = ""
 })
 
 function addItem() {
