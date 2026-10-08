@@ -2,33 +2,21 @@ const itemName = document.getElementById("itemName")
 const buttonAdd = document.getElementById("buttonAdd")
 const itemDiv = document.getElementById("example")
 const items = document.querySelector(".items")
-const alertRm = document.querySelector(".removed")
-const pao = document.querySelector(".pao-de-forma")
+const warningItemRemoved = document.querySelector(".removed")
+const removeAlert = document.querySelector(".removeAlert")
+const item = document.querySelectorAll(".item")
 
-const paoBtn = pao.querySelector(".delete")
-paoBtn.addEventListener("click", () => {
-  pao.remove()
-})
+function deleteItems(item) {
+  item.querySelector(".delete").addEventListener("click", () => {
+    item.remove()
+    warningItemRemoved.classList.remove("display-none")
+    setTimeout(() => {
+      warningItemRemoved.classList.add("display-none")
+    }, 5000);
+  })
+}
 
-const cafe = document.querySelector(".cafe-preto")
-const cafeBtn = cafe.querySelector(".delete")
-cafeBtn.addEventListener("click", () => {
-  cafe.remove()
-})
-
-
-const suco = document.querySelector(".suco-de-laranja")
-const sucoBtn = suco.querySelector(".delete")
-sucoBtn.addEventListener("click", () => {
-  suco.remove()
-})
-
-
-const bolacha = document.querySelector(".bolacha")
-const bolachaBtn = bolacha.querySelector(".delete")
-bolachaBtn.addEventListener("click", () => {
-  bolacha.remove()
-})
+item.forEach(deleteItems)
 
 buttonAdd.addEventListener("click", () => {
     if (itemName.value === "") {
@@ -47,8 +35,9 @@ function addItem() {
   newItem.querySelector("p").textContent = nomeDoItem
   items.append(newItem)
   
-  const buttonDel = newItem.querySelector(".delete")
-  buttonDel.addEventListener("click", () => {
-    newItem.remove()
-  })
+  deleteItems(newItem)
 }
+
+removeAlert.addEventListener("click", () => {
+  warningItemRemoved.classList.add("display-none")
+})
