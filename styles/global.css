@@ -79,7 +79,6 @@ input[type="checkbox"] {
   
   &:hover {
     border-color: var(--border-hover);
-    border: none;
   }
   
   &:checked {
