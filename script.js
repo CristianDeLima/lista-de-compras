@@ -6,6 +6,15 @@ const warningItemRemoved = document.querySelector(".removed")
 const removeAlert = document.querySelector(".removeAlert")
 const item = document.querySelectorAll(".item")
 
+function isSelected(item) {
+  const checkbox = item.querySelector("#checkbox")
+  checkbox.addEventListener("change", () => {
+    item.querySelector("p").classList.toggle("riskItem")
+  })
+}
+
+item.forEach(isSelected)
+
 function deleteItems(item) {
   item.querySelector(".delete").addEventListener("click", () => {
     item.remove()
@@ -36,6 +45,7 @@ function addItem() {
   items.append(newItem)
   
   deleteItems(newItem)
+  isSelected(newItem)
 }
 
 removeAlert.addEventListener("click", () => {

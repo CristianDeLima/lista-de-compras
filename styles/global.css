@@ -32,6 +32,10 @@ body {
   background-color: var(--background-primary);
 }
 
+.riskItem {
+  text-decoration: line-through;
+}
+
 .button {
   color: var(--always-white);
   background-color: var(--color-brand);
